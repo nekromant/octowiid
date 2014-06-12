@@ -1,0 +1,60 @@
+default_profile: solidoodle
+daemon: false
+pidfile: /tmp/octowiid.pid
+
+solidoodle: 
+  server: http://solidoodle.iceshard
+  apikey: DC7EC9662778490B853D9EA5F63201E7
+  blinkpattern: 1
+  
+  bindings: 
+    BTN_DOWN:
+      gcode: 
+        - G91
+        - G1 Y-5 F1000
+    BTN_HOME:
+      gcode:
+        - G28 X0 Y0 Z0
+    BTN_RIGHT:
+      gcode:
+        - G91
+        - G1 X5 F1000
+    BTN_LEFT:
+      gcode:
+        - G91
+        - G1 X-5 F1000
+    BTN_UP:
+      gcode:
+        - G91
+        - G1 Y5 F1000
+    BTN_PLUS:
+      gcode:
+        - G91
+        - G1 Z5 F200
+    BTN_MINUS:
+      gcode: 
+        - G91
+        - G1 Z-5 F200
+    BTN_1: 
+      gcode:
+        - G91
+        - G1 E1 F300
+    BTN_2: 
+      gcode:
+        - G91
+        - G1 E-1 F300
+    BTN_A:
+      gcode:
+        - M1
+    BTN_B:
+      profile: lazie
+
+
+lazie: 
+  blinkpattern: 2
+  server: http://lazie.iceshard
+  apikey: blah
+  bindings:
+    BTN_B:
+      profile: solidoodle
+    
